@@ -1,0 +1,12 @@
+language: python
+python:
+  - "2.7"
+install: "pip install darkslide"
+script: darkslide -c config.cfg
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  local_dir: 'out'
+  on:
+    branch: master
